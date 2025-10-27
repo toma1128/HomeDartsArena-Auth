@@ -1,0 +1,17 @@
+{
+  "name": "auth",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@hono/oauth-providers": "^0.8.5",
+    "hono": "^4.10.3",
+    "lucia": "^3.2.2"
+  }
+}
