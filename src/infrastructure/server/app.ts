@@ -21,7 +21,7 @@ export function createApp(db: MySql2Database<typeof schema>) {
 
     // ルーティング設定
     app.get('/auth/google', (c) => authController.redirectGoogle(c));
-    app.get('/auth/google/callback', (c) => authController.handleGoogleCallback(c));
+    app.get('/auth/callback/google', (c) => authController.handleGoogleCallback(c));
 
     return app;
 }

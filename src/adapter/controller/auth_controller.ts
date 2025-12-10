@@ -14,7 +14,7 @@ export class AuthController {
         return c.redirect(redirectUrl);
     }
 
-    // /auth/google/callback
+    // /auth/callback/google
     async handleGoogleCallback(c: Context) {
         // contextからcodeを取得
         const code = c.req.query("code");
