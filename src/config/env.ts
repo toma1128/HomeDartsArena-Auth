@@ -14,7 +14,7 @@ export const env = {
     HOST: process.env.DB_HOST!,
     PORT: parseInt(process.env.DB_PORT || '3366', 10),
     USER: process.env.DB_USER!,
-    PASSWORD: process.env.DB_PASSWORD!,
+    PASSWORD: process.env.DB_PASS!,
     NAME: process.env.DB_NAME!,
   },
 };
