@@ -5,8 +5,36 @@ import * as schema from '../db/schema';
 import { env } from '../../config/env';
 import { createApp } from './app';
 
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export async function initializeDatabase(): Promise<MySql2Database<typeof schema>> {
     const { HOST, PORT, USER, PASSWORD, NAME } = env.DB;
+
+    console.log(`🔌 Connecting to ${HOST}:${PORT} as ${USER}...`);
+    
+    let retries = 10;
+    while (retries > 0) {
+        try {
+            // 疎通確認
+            const checkConn = await mysql.createConnection({
+                host: HOST,
+                port: PORT,
+                user: USER,
+                password: PASSWORD,
+            });
+            await checkConn.end();
+            console.log('✅ Connected to Database server successfully.');
+            break; // 成功したらループを抜ける
+        } catch (error) {
+            retries--;
+            console.warn(`⏳ Waiting for Database... (${retries} retries left)`);
+            if (retries === 0) {
+                console.error('❌ Failed to connect to Database. Exiting...');
+                throw error; // 最後までダメならエラーで落とす
+            }
+            await wait(3000);
+        }
+    }
 
     const adminConnection = await mysql.createConnection({
         host: HOST,
