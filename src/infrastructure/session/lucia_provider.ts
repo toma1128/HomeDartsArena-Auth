@@ -1,5 +1,5 @@
-import { Lucia, TimeSpan } from "lucia";
-import type { IJwtProvider } from "../../adapter/provider/jwt_provider";
+import { Lucia, TimeSpan } from 'lucia';
+import type { IJwtProvider } from '../../adapter/provider/jwt_provider';
 
 const lucia = new Lucia( null as any, {
     sessionExpiresIn: new TimeSpan(2, "w"), //二週間

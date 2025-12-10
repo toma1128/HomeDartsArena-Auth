@@ -1,4 +1,4 @@
-import type {User} from "../../domain/entity/user";
+import type { User } from '../../domain/entity/user';
 
 export interface IUserRepository {
     findByGoogleId(googleId: string): Promise<User | null>; // GoogleID検索

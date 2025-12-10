@@ -1,7 +1,7 @@
-import type {IUserRepository} from "../../adapter/repository/user_repository";
-import type {IGoogleAuthProvider} from "../../adapter/provider/google_auth_provider";
-import type {IJwtProvider} from "../../adapter/provider/jwt_provider";
-import type {User} from "../entity/user";
+import type { IUserRepository } from '../../adapter/repository/user_repository';
+import type { IGoogleAuthProvider } from '../../adapter/provider/google_auth_provider';
+import type { IJwtProvider } from '../../adapter/provider/jwt_provider';
+import type { User } from '../entity/user';
 
 export class AuthUsecase {
     constructor(

@@ -1,7 +1,7 @@
-import type { MySql2Database } from "drizzle-orm/mysql2";
-import type { IUserRepository } from "../../adapter/repository/user_repository";
-import type { User } from "../../domain/entity/user";
-import * as schema from "./schema.ts"
+import type { MySql2Database } from 'drizzle-orm/mysql2';
+import type { IUserRepository } from '../../adapter/repository/user_repository';
+import type { User } from '../../domain/entity/user';
+import * as schema from './schema.ts';
 
 export class DBUserRepository implements IUserRepository {
     constructor(private db: MySql2Database<typeof schema>) {}

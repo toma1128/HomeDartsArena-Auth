@@ -1,6 +1,6 @@
-import type {Context} from "hono";
-import {AuthUsecase} from "../../domain/usecase/auth_usecase";
-import type {IGoogleAuthProvider} from "../provider/google_auth_provider";
+import type { Context } from 'hono';
+import { AuthUsecase } from '../../domain/usecase/auth_usecase';
+import type { IGoogleAuthProvider } from '../provider/google_auth_provider';
 
 export class AuthController {
     constructor(
