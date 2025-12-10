@@ -1,5 +1,4 @@
 import type { IGoogleAuthProvider, GoogleUser } from "../../adapter/provider/google_auth_provider";
-import {GoogleAuth} from "@hono/oauth-providers/google";
 
 export class HonoGoogleAuthProvider implements IGoogleAuthProvider {
 
