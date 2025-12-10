@@ -1,4 +1,4 @@
-import { mysqlTable, varchar, char, timestamp } from 'drizzle-orm/mysql-core';
+import { mysqlTable, varchar, char, timestamp, datetime } from 'drizzle-orm/mysql-core';
 
 export const users = mysqlTable('users', {
   uuid: char('uuid', { length: 36 }).primaryKey(),

@@ -10,6 +10,8 @@ export const env = {
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET!,
   GOOGLE_REDIRECT_URL: process.env.GOOGLE_REDIRECT_URL!,
 
+  JWT_SECRET: process.env.JWT_SECRET!,
+
   // DB接続情報
   DB: {
     HOST: process.env.DB_HOST!,
@@ -20,6 +22,6 @@ export const env = {
   },
 };
 
-if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_REDIRECT_URL || !process.env.DB_HOST || !process.env.DB_USER || !process.env.DB_NAME) {
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_REDIRECT_URL || !process.env.DB_HOST || !process.env.DB_USER || !process.env.DB_NAME || !process.env.JWT_SECRET) {
   throw new Error('Missing required environment variables. Check .env file.');
 }
