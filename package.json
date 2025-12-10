@@ -1,10 +1,11 @@
 {
   "name": "auth",
-  "module": "index.ts",
+  "module": "src/infrastructure/server/index.ts",
+  "moduleResolution": "bundler",
   "type": "module",
   "private": true,
-  "scripts" : {
-    "dev": "bun run --hot index.ts"
+  "scripts": {
+    "dev": "bun run --hot src/infrastructure/server/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -14,7 +15,11 @@
   },
   "dependencies": {
     "@hono/oauth-providers": "^0.8.5",
-    "hono": "^4.10.3",
-    "lucia": "^3.2.2"
+    "@lucia-auth/adapter-drizzle": "^1.1.0",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "hono": "^4.10.7",
+    "lucia": "^3.2.2",
+    "mysql2": "^3.15.3"
   }
 }
